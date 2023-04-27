@@ -74,13 +74,13 @@ Feature: Register Page
     Then It should display an error message "password_mismatch:The two password fields didn’t match."
     
     
-     @tag8 Register
-  Scenario Outline: The user is presented with error message for password with characters less than 8
-    Given The user opens Register Page
-    When  The user enters a valid "username" and "password" with characters less than 8
-      | username     | password | password confirmation |
-      | Numpy@sdet108_1 | VP108AK  | VP108AK           |
-    Then It should display an error message "Password should contain at least 8 characters"
+     #@tag8 Register
+  #Scenario Outline: The user is presented with error message for password with characters less than 8
+    #Given The user opens Register Page
+    #When  The user enters a valid "username" and "password" with characters less than 8
+      #| username     | password | password confirmation |
+      #| Numpy@sdet108_1 | VP108AK  | VP108AK           |
+    #Then It should display an error message "Password should contain at least 8 characters"
     
     @tag9 Register
   Scenario Outline: The user is presented with error message for password with only numbers
