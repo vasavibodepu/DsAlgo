@@ -1,24 +1,23 @@
 
 
-Feature: Array
-covering the functionality of Array page
+Feature: User navigating through all the features on Array page in Dsalgo portal 
 
-  @tag1
-  Scenario: The user is logged in to DS Algo portal
-    Given The user is on Signin page of DS Algo portal
+@tag1
+Scenario: User logged into DsAgo portal
+    Given user is on sign in page
     When The user enter valid username "Numpysdet108" and password "VP108AK@08"
-    Then The user redirected to homepage
-   
+    Then logged in succesfully
+  
 
   @tag2 
-  Scenario Outline: The user is able to navigate to "ARRAY" Data Structure Page
-    Given The user is on the "home page" after logged in
-    When The user clicked on Array "Get Started" Button
+  Scenario: The user is able to navigate to "ARRAY" Data Structure Page
+    Given The user is on the Home page after logged in
+    When The user clicked on Array Get Started button
     Then The user redirected to "ARRAY" Data Structure Page
 
 
 	@tag3 
-  Scenario Outline: The user is able to navigate to "ARRAY" Data Structure Page
+  Scenario: The user is able to navigate to Arrays in Python Page
     Given The user is on the "Array page" after logged in
     When The user clicks "Arrays in Python" button
     Then The user redirected to "Arrays in Python" Page
@@ -31,15 +30,15 @@ covering the functionality of Array page
     
   @tag5 
   Scenario Outline: The user is able run code in tryEditor of Arrays in Python page
-    Given The user is in a page having an tryEditor with a Run button to test
-    When "The user enter valid python code in tryEditor from sheet "print "Welcome to Ds-Algo"" and "<1>"
+    Given The user is on Assessment page of Arrays in Python 
+    When user enters valid python code in tryEditor from sheet print "Welcome to Ds-Algo"" and "<1>"
 		And The user clicks on run button
-		Then "The user should be presented with Run result"
+		Then The user should be presented with Run result
 		
 		
 	@tag6 
   Scenario Outline: The user is presented with error message for code with invalid syntax in tryEditor for Arrays in Python page
-    Given The user is in a page having an tryEditor with a Run button to test
+    Given The user is on Assessment page having an tryEditor with a Run button to test
     When The user enter python code with invalid syntax in tryEditor from sheet "Welcome to Ds-Algo"and "<1>"
 		And The user clicks on run button
     Then The user should get error message"SyntaxError: bad input on line 1"
@@ -49,16 +48,13 @@ covering the functionality of Array page
       | pythonCode |         1 |
     
   @tag7 
-  Scenario Outline: The user is able to navigate to Arrays Using List page
-    Given The user should press "Back Arrow" button on top left corner to go back to "Array Page"
-    Then The user should be in "Arrays in Python" Page
-    And Again the user should press "Back Arrow" button on top left corner to go back to "Array Page"
-    When The user comes to Array Page
-    Then The user should click "Arrays Using List" button
+  Scenario: The user is able to navigate to Arrays Using List page
+    Given The user is on Array Page
+    When The user should click "Arrays Using List" button
     Then The user should be redirected to "Arrays Using List" page
     
   @tag8 
-  Scenario Outline: The user is able to navigate to a page having an tryEditor from Arrays Using List page
+  Scenario: The user is able to navigate to a page having an tryEditor from Arrays Using List page
     Given The user is on the "Arrays Using List" after logged in
     When The user clicks "Try Here" button
  		Then The user should be redirected to a page having an tryEditor with a Run button to test
@@ -125,11 +121,9 @@ covering the functionality of Array page
    
     @tag15 
   Scenario Outline: The user is able to navigate to Applications of Array page
-    Given The user is on the "Array page" after logged in
-    When The user clicks Applications of Array link
-    And Again the user should press "Back Arrow" button on top left corner to go back to "Array Page"
-		When The user comes to Array Page
-    Then The user should click "Applications of Array" button
+    Given The user is on the Home Page after logged in
+    When The user clicks Array Get Started button
+    And user should click Applications of Array button
     Then The user should be redirected to "Applications of Array" page
     
     @tag16 
@@ -159,198 +153,5 @@ covering the functionality of Array page
  		Examples: 
       | Sheetname  | RowNumber |
       | pythonCode |         1 |
-      
-       @tag19 
-  Scenario Outline: The user is able to navigate to Applications of Array page
-    Given The user is on the "Array page" after logged in
-    When The user clicks Applications of Array link
-    And Again the user should press "Back Arrow" button on top left corner to go back to "Array Page"
-		When The user comes to Array Page
-    Then The user should click "Practice Questions" button
-    Then The user should be redirected to "Practice Questions" page
-    
- 		
-    @tag20 
-  Scenario Outline: The user is able to navigate to Practice page
-    Given The user is on the "Array Page" after logged in
-    When The user clicks Practice Questions link
-		Then The user should be redirected to Practice page
-		
-		 @tag15 
-  Scenario Outline: The user is able to navigate to Question page from Search the array link
-    Given The user is on the "Practice page" after logged in
-    When The user clicks the Search the array link
-    Then The user should be redirected to question page contains an tryEditor with Run and Submit buttons
-    
-    @tag16 
-  Scenario Outline: The user is able to run code in tryEditor for Search the array link
-    Given The user is on "Question" page of "Search the array" after logged in
-    When The user enter valid python code in tryEditor from sheet "<Sheetname>" and "<RowNumber>" for the question
-		And The user clicks on run button
-    Then The user should be presented with Run result
-    
-   Examples: 
-      | Sheetname  | RowNumber |
-      | pythonCode |         2 |
-    
-    
-    @tag17 
-  Scenario Outline: The user is able to submit code in tryEditor for Search the array link
-    Given The user is on "Question" page of "Search the array" after logged in
-    When The user enter valid python code in tryEditor from sheet "<Sheetname>" and "<RowNumber>" for the question
-		And The user clicks on Submit button
-    Then The User should get Error message "Error occurred during submission"
-   
-    
-  Examples: 
-      | Sheetname  | RowNumber |
-      | pythonCode |         3 |
-      
-       #@tag18 
-  #Scenario Outline:  The user is presented with error message for code with invalid syntax in tryEditor for Search the array link
-    #Given The user is on "Question" page of "Search the array" after logged in
-    #When The user enter valid python code in tryEditor from sheet "<Sheetname>" and "<RowNumber>" for the question
-#		And The user clicks on run button
-    #Then The user should be presented with error message 
-    #
-     #Examples: 
-      #| Sheetname  | RowNumber |
-      #| pythonCode |         1 |
-      
-      
-       @tag19 
-  Scenario Outline: The user is able to navigate to Question page from "Max Consecutive Ones" by clicking back arrow button from top left corner
-  	Given The user should press "Back Arrow" button on top left corner to go back to "Array Page"
-		When The user comes to Array Page
-    Then The user should click "Max Consecutive Ones" button
-    When The user should be redirected to "Max Consecutive Ones" page
-    Then The user should be redirected to question page contains an tryEditor with Run and Submit buttons
-   
-     @tag20 
-  Scenario Outline: The user is able to run code in tryEditor for Max Consecutive Ones
-  	Given The user is on "Question" page of "Max Consecutive Ones" after logged in
-		When The user enter valid python code in tryEditor from sheet "<pythonCode>" and "<4>" for the question
-		And The user clicks on run button
-    Then The user should be presented with Run result
-    
-  Examples: 
-      | Sheetname  | RowNumber |
-      | pythonCode |         4 |
-    
-    
-    @tag21 
-  Scenario Outline: The user is able to submit code in tryEditor for Max Consecutive Ones
-  	Given The user is on "Question" page of "Max Consecutive Ones" after logged in
-		When The user enter valid python code in tryEditor from sheet "<pythonCode>" and "<5>" for the question
-		And The user clicks on Submit button
-    Then The user should be presented with successful submission message
-    
-  Examples: 
-      | Sheetname  | RowNumber |
-      | pythonCode |         5 |
-    
-      
-      @tag22 
-  Scenario Outline: The user is presented with error message for invalid code in tryEditor for Max Consecutive Ones
-  	Given The user is on "Question" page of "Max Consecutive Ones" after logged in
-		When The user enter python code with invalid syntax in tryEditor from sheet "<pythonCode>" and "<1>" for the question
-		And The user clicks on Run button
-    Then The user should be presented with error message "SyntaxError: EOF in multi-line statement on line 14"
-    Then The user should click "Ok" after getting Error Message
-    
-  Examples: 
-      | Sheetname  | RowNumber |
-      | pythonCode |         1|
-    
-    
-     @tag23 
-  Scenario Outline: The user is able to navigate to Question page from "Find Numbers with Even Number of Digits"
-  	Given The user should press "Back Arrow" button on top left corner to go back to "Array Page"
-  	When The user is on the "Practice page" after logged in
-		Then The user clicks the "Find Numbers with Even Number of Digits" link
-		Then The user should be redirected to question page contains an tryEditor with Run and Submit buttons
-    
-    
-    
- 		 @tag24 
-  Scenario Outline: The user is able to run code in tryEditor for Find Numbers with Even Number of Digits
-  	Given The user is on "Question" page of "Find Numbers with Even Number of Digits" after logged in
-		When The user enter valid python code in tryEditor from sheet "<pythonCode>" and "<6>" for the question
-		And The user clicks on run button
-    Then The user should be presented with Run result
-    Then The user should get "Text box" to input number 2 Times 
-    And then user will get result of the code
-    
-  Examples: 
-      | Sheetname  | RowNumber |
-      | pythonCode |         6|
-      
-       #@tag25 Array
-  #Background: The user is logged in to DS Algo portal
-  #Scenario Outline: The user is able to submit code in tryEditor for Find Numbers with Even Number of Digits
-  #	Given The user is on "Question" page of "Find Numbers with Even Number of Digits" after logged in
-  #	When The user enter valid python code in tryEditor from sheet "<pythonCode>" and "<7>" for the question
-#		And The user clicks on Submit button
-#		Then The user should be presented with successful submission message
-#		
-	Examples: 
-      | Sheetname  | RowNumber |
-      | pythonCode |         7 |
-    
-    
-    #@tag26 
-  #Scenario Outline: The user is presented with error message for code with invalid syntax in tryEditor for Find Numbers with Even Number of Digits
-  #	Given The user is on "Question" page of "Find Numbers with Even Number of Digits" after logged in
-  #	When The user enter python code with invalid syntax in tryEditor from sheet "< pythonCode>" and "<1>" for the question
-#		And The user clicks on run button
-#		Then The user should be presented with error message
-#		
-#	Examples: 
-      #| Sheetname  | RowNumber |
-      #| pythonCode |         1 |
-      
-       @tag27 
-  Scenario Outline: The user is able to navigate to Question page from Squares of a Sorted Array
-  	Given The user should press "Back Arrow" button on top left corner to go back to "Array Page"
-		When The user clicks the Squares of a Sorted Array link
-		Then The user should be redirected to question page contains an tryEditor with Run and Submit buttons
-		
-@tag28
-  Scenario Outline: The user is able to run code in tryEditor for Squares of a Sorted Array
-  	Given The user is on "Question" page of "Squares of a Sorted Array" after logged in
-		When The user enter valid python code in tryEditor from sheet "<pythonCode>" and "<8>" for the question
-		And The user clicks on run button
-    Then The user should be presented with Run result "[1, 4, 9, 16][0, 1, 9, 16, 100]"
-    
-    
-  Examples: 
-      | Sheetname  | RowNumber |
-      | pythonCode |         8|
-    
-    @tag29 
-  Scenario Outline: The user is able to submit code in tryEditor for Squares of a Sorted Array
-  	Given The user is on "Question" page of "Squares of a Sorted Array" after logged in
-		When The user enter valid python code in tryEditor from sheet "<pythonCode>" and "<9>" for the question
-		And The user clicks on Submit button
-    Then The user should be presented with successful submission message"No tests were collected"
-    
-    
-  Examples: 
-      | Sheetname  | RowNumber |
-      | pythonCode |         9|
-      
-      @tag30 
-  Scenario Outline: The user is presented with error message for code with invalid syntax in tryEditor for Squares of a Sorted Array
-  	Given The user is on "Question" page of "Squares of a Sorted Array" after logged in
-		When The user enter valid python code in tryEditor from sheet "<pythonCode>" and "<1>" for the question
-		And The user clicks on run button
-    Then The user should be presented with error message"SyntaxError: bad input on line 1"
-    Then The user press "ok" button
-    
-    
-  Examples: 
-      | Sheetname  | RowNumber |
-      | pythonCode |         1|
-    
-    
+  
  		

@@ -5,6 +5,8 @@ import static org.testng.Assert.assertEquals;
 import java.time.Duration;
 import java.util.List;
 
+import javax.print.DocFlavor.STRING;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,6 +24,10 @@ public class HomePage {
 
 	By dsDropdownOptions = By.xpath("//a[@class='nav-link dropdown-toggle']");
 	By signInbtn = (By.xpath("//a[@href='/login']"));
+	By userNameValid = (By.xpath("//input[@name='username']"));
+	By passWordValid = (By.xpath("//input[@name='password']"));
+	By loginbtn = (By.xpath("//input[@type='submit']"));
+	//By loggedIn = (By.cssSelector("//div[@class='alert alert-primary']"));
 	By loginErrorMessage = (By.xpath("//div[@class='alert alert-primary']"));
 
 	private WebDriver driver;
@@ -123,6 +129,29 @@ public class HomePage {
 
 	public void clickRegBtn() {
 		driver.findElement(registerButn).click();
+	}
+
+	public void userName() {
+		driver.findElement(userNameValid).sendKeys("Numpy@sdet108_1");
+
+	}
+
+	public void passWord() {
+		driver.findElement(passWordValid).sendKeys("VP108AK@08");
+
+	}
+
+	public void clickLoginBtn() {
+		driver.findElement(loginbtn).click();
+
+	}
+	
+	public void loggedInSuccessfully() {
+		WebElement loggedIn = driver.findElement(By.xpath("//div[@class='alert alert-primary']"));
+
+		String loggedInMessage = loggedIn.getText(); 
+	System.out.println(loggedInMessage);	
+		
 	}
 
 	public void validateRegistrationPageTitle() {

@@ -1,11 +1,21 @@
 package stepDefinition;
 
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pageObjects.HomePage;
+import utilities.ConfigUtils;
 
 
 public class RegisterPage {
+
+	WebDriver driver = ConfigUtils.getChromeWebDriver();
+	public HomePage homePageObj = new HomePage(driver);
+    Properties properties = ConfigUtils.loadProperties();
 	
 
 @Given("The user opens DS Algo portal link")

@@ -2,7 +2,7 @@
 Feature: Signing in successfully into DsAlgo portal after registration
 
   @tag1 
-  Scenario: Verifying Register link
+  Scenario: launching sign in 
     When The user clicks on register link on signin page
     Then The user redirected to Registration page from signin page
     

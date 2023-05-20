@@ -26,7 +26,7 @@ public class ConfigUtils {
 
 			driver = new ChromeDriver(co);
 		}
-		
+
 		return driver;
 
 	}

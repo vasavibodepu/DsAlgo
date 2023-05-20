@@ -38,12 +38,6 @@ Feature: User is navigating all the features present in the Home Page of DsAlgo 
       | graph          |
 
       
-      #@tag4
-      #Scenario: User navigating to Sign In page
-      #Given The user is on Home page
-      #When  user clicks sign in button
-      #And  redirected to Sign in page
-      #Then "Username" and "Password" should be Null
       
       @tag5
       Scenario: launch user Registration page
@@ -52,14 +46,7 @@ Feature: User is navigating all the features present in the Home Page of DsAlgo 
       Then user should be redirected to Registration page
       
       
-      #@tag6
-      #Scenario:  User Registration 
-      #Given The user is on Home page
-      #When  user clicks Register button
-      #Then page Title should be "https://dsportalapp.herokuapp.com/register"
-      #
-      #
-      
+     
       
       
       
